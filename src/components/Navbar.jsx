@@ -1,7 +1,5 @@
 import { useEffect, useState } from "react";
-import { navLinks } from "../utils";
-import { Menu, Moon, Sun } from "lucide-react";
-import MenuSidebar from "./MenuSidebar";
+import { Moon, Sun } from "lucide-react";
 
 const links = [
     {label:"HOME", to:"#home"},

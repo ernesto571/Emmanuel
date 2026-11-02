@@ -34,3 +34,7 @@ body {
   background-color: var(--bg);
   color: var(--ink);
 }
+
+.float {
+    animation: float 5s ease-in-out infinite;
+}
