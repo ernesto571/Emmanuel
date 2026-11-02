@@ -1,0 +1,36 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg: #ffffff;
+  --soft: #FBF6F0;
+  --ink: #1a1a1a;
+  --mute: #6f6a65;
+  --line: rgba(0, 0, 0, 0.1);
+  --tint: #F8E6D2;
+  --acc: #F2B97A;
+}
+
+.dark {
+  --bg: #0a0a0a;
+  --soft: #111111;
+  --ink: #f5f0ea;
+  --mute: #a39a91;
+  --line: rgba(255, 255, 255, 0.1);
+  --tint: #2a2118;
+}
+
+html {
+  color-scheme: light;
+}
+
+html.dark {
+  color-scheme: dark;
+}
+
+body {
+  @apply font-sans antialiased;
+  background-color: var(--bg);
+  color: var(--ink);
+}
