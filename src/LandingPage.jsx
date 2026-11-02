@@ -1,5 +1,6 @@
 import HeroSection from "./components/HeroSection";
 import Projects from "./components/Projects";
+import Resume from "./components/Resume";
 
 export default function LandingPage (){
 
@@ -9,6 +10,7 @@ export default function LandingPage (){
                 <HeroSection />
             </section>
             <Projects  />
+            <Resume />
             
         </section>
     )
