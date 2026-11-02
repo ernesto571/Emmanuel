@@ -1,3 +1,4 @@
+import About from "./components/About";
 import HeroSection from "./components/HeroSection";
 import Projects from "./components/Projects";
 import Resume from "./components/Resume";
@@ -13,6 +14,7 @@ export default function LandingPage (){
             <Projects  />
             <Resume />
             <Stack />
+            <About />
             
         </section>
     )
