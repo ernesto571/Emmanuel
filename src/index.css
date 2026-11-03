@@ -38,3 +38,7 @@ body {
 .float {
     animation: float 5s ease-in-out infinite;
 }
+
+@keyframes float {
+    50% { transform: translateY(-10px); }
+}
