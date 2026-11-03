@@ -1,5 +1,5 @@
 import { Copy } from "lucide-react";
-import { useState } from "react";
+import { useState, useEffect, useRef } from "react";
 import toast from "react-hot-toast";
 import emailjs from "emailjs-com";
 
@@ -16,6 +16,18 @@ export default function Contact () {
     const [emailError, setEmailError] = useState("")
     const [msgError, setMsgError] = useState("")
 
+    const refs = useRef([])
+
+    useEffect(() => {
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) { entry.target.classList.add("animate-in"); observer.unobserve(entry.target) }
+            })
+        }, { threshold: 0.12 })
+        refs.current.forEach((el) => { if (el) observer.observe(el) })
+        return () => observer.disconnect()
+    }, [])
+
     const handleChange = (e) => {
         setFormData({
           ...formData,
@@ -25,7 +37,7 @@ export default function Contact () {
 
     const handleCopy = async () => {
         try {
-          await navigator.clipboard.writeText("emanueladesemoye@email.com")
+          await navigator.clipboard.writeText("emmanueladesemoye@gmail.com")
           toast.success("Email copied to clipboard")
         } catch { toast.error("Couldn't copy. Please copy it manually.") }
     }
@@ -62,7 +74,7 @@ export default function Contact () {
     
         emailjs
           .send(
-            "service_yhjh0yt", // 🔹 your EmailJS service ID
+            "service_yhjh0yt" , // 🔹 your EmailJS service ID
             "template_e42qj4k", // 🔹 your EmailJS template ID
             {
               name: formData.name,
@@ -89,7 +101,7 @@ export default function Contact () {
     return (
         <section id="contact" className="mx-auto max-w-6xl scroll-mt-24 px-6 py-16" >
             <div className="grid gap-10 md:grid-cols-2" >
-                <div>
+                <div ref={(el) => { refs.current[0] = el }} className="fade-up" >
                     <span className="inline-block rounded-full border border-acc px-4 py-1 text-xs font-semibold text-acc">Contact</span>
                     <h2 className="mt-3 text-3xl font-extrabold tracking-tight md:text-4xl">Let's Build Something Together</h2>
                     <p className="mt-4 max-w-sm text-mute">Have a project, role, or idea? Send a message or copy my email below.</p>
@@ -99,7 +111,7 @@ export default function Contact () {
                     </button>
                 </div>
 
-                <div className="space-y-4 rounded-3xl border border-line bg-soft p-6 shadow-md" >
+                <div ref={(el) => { refs.current[1] = el }} className="card-anim space-y-4 rounded-3xl border border-line bg-soft p-6 shadow-md" style={{ transitionDelay: "0.15s" }} >
                     <div><label className="text-sm font-semibold" >Name</label><input name="name" value={formData.name} onChange={handleChange} className="mt-1.5 w-full rounded-xl border border-line bg-bg px-4 py-3 text-sm outline-none transition focus:border-acc" /><p className="err mt-1  text-xs text-red-500">{nameError} </p></div>
 
                     <div><label className="text-sm font-semibold" >Email</label><input name="email" type="email"  value={formData.email} onChange={handleChange}  className="mt-1.5 w-full rounded-xl border border-line bg-bg px-4 py-3 text-sm outline-none transition focus:border-acc" /><p className=" mt-1  text-xs text-red-500">{emailError} </p></div>
