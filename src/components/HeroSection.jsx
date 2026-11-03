@@ -41,10 +41,10 @@ export default function HeroSection() {
             <div className="mt-10 flex flex-wrap items-center gap-x-8 gap-y-5 md:pl-24">
               <a href="#projects" className="group inline-flex items-center gap-4 rounded-full bg-ink py-2 pl-7 pr-2 text-sm font-bold text-bg shadow-md transition duration-200 hover:-translate-y-0.5">View Projects<span className="grid h-11 w-11 place-items-center rounded-full bg-acc text-black transition duration-300 group-hover:rotate-45"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="h-5 w-5"><path d="M7 7h10v10" /><path d="M7 17 17 7" /></svg></span></a>
               <ul className="flex flex-wrap gap-x-5 gap-y-1 text-sm font-semibold">
-                <li><a href="#" className="text-mute transition hover:text-ink">GitHub</a></li>
-                <li><a href="#" className="text-mute transition hover:text-ink">LinkedIn</a></li>
-                <li><a href="#" className="text-mute transition hover:text-ink">Twitter</a></li>
-                <li><a href="#" className="text-mute transition hover:text-ink">Upwork</a></li>
+                <li><a href="https://github.com/ernesto571" className="text-mute transition hover:text-ink">GitHub</a></li>
+                <li><a href="https://www.linkedin.com/in/emmanuel-adesemoye-996a43338/" className="text-mute transition hover:text-ink">LinkedIn</a></li>
+                <li><a href="https://contra.com/emmanuel_adesemoye_814ralf2" className="text-mute transition hover:text-ink">Contra</a></li>
+                <li><a href="https://www.upwork.com/freelancers/~01c54ee9730e1f1d6a" className="text-mute transition hover:text-ink">Upwork</a></li>
               </ul>
             </div>
             <div className="mt-8 max-w-md rounded-2xl border border-line bg-bg p-5 shadow-sm md:ml-auto">

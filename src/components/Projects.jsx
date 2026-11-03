@@ -86,7 +86,7 @@ export default function Projects() {
       <div ref={headingRef} className="fade-up text-center"><span className="inline-block rounded-full border border-acc px-4 py-1 text-xs font-semibold text-acc">Portfolio</span><h2 className="mt-3 text-3xl font-extrabold tracking-tight md:text-4xl">My Recent Work</h2></div>
       <div ref={tabsRef} className="card-anim mx-auto mt-8 flex w-fit flex-wrap justify-center gap-1 rounded-full bg-tint p-1.5 text-sm font-semibold" style={{ transitionDelay: "0.1s" }}>
         {categories.map((c) => (
-          <button key={c.label} onClick={() => setActive(c.label)} className={`rounded-full px-5 py-2 transition ${active === c.label ? "bg-acc text-black shadow-sm" : "text-mute hover:text-ink"}`}>{c.label}</button>
+          <button key={c.label} onClick={() => setActive(c.label)} className={`rounded-full px-2.5 md:px-5 py-2 transition ${active === c.label ? "bg-acc text-black shadow-sm" : "text-mute hover:text-ink"}`}>{c.label}</button>
         ))}
       </div>
       <div ref={gridRef} key={active} className={`mt-8 grid gap-4 ${grid}`}>
